@@ -4,30 +4,35 @@
 
 
 /*
- * Pantalla 1 → Pantalla 2
+ * PANTALLA 1 → PANTALLA 2
  */
 
 document
     .getElementById("btn-screen-1")
     .addEventListener("click", () => {
 
+
         /*
-         * Intentamos iniciar la música justo cuando
-         * la persona toca el botón.
-         *
-         * Esto es importante para celulares.
+         * Intentar iniciar la música.
          */
-        if (typeof window.startBackgroundMusic === "function") {
+
+        if (
+            typeof window.startBackgroundMusic === "function"
+        ) {
+
             window.startBackgroundMusic();
+
         }
+
 
         showScreen("screen-2");
 
     });
 
 
+
 /*
- * Pantalla 2 → Pantalla 3
+ * PANTALLA 2 → PANTALLA 3
  */
 
 document
@@ -39,17 +44,189 @@ document
     });
 
 
+
 /* =========================================================
-   RESPUESTA "SÍ"
+   ELEMENTOS DE LA CARTA
+   ========================================================= */
+
+const letterContainer =
+    document.getElementById(
+        "letter-container"
+    );
+
+
+const envelope =
+    document.getElementById(
+        "envelope"
+    );
+
+
+const openLetter =
+    document.getElementById(
+        "open-letter"
+    );
+
+
+const closeLetter =
+    document.getElementById(
+        "btn-close-letter"
+    );
+
+
+const letterHint =
+    document.getElementById(
+        "letter-hint"
+    );
+
+
+
+/* =========================================================
+   ABRIR CARTA
+   ========================================================= */
+
+envelope.addEventListener(
+    "click",
+    () => {
+
+
+        /*
+         * Si ya está abierta,
+         * no hacemos nada.
+         */
+
+        if (
+            letterContainer.classList.contains(
+                "open"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        /*
+         * Iniciar música.
+         *
+         * Como esto ocurre después de tocar
+         * la carta, el celular normalmente
+         * permitirá reproducirla.
+         */
+
+        if (
+            typeof window.startBackgroundMusic === "function"
+        ) {
+
+            window.startBackgroundMusic();
+
+        }
+
+
+        /*
+         * Comienza la animación
+         * de apertura.
+         */
+
+        letterContainer.classList.add(
+            "opening"
+        );
+
+
+        /*
+         * Ocultar indicación.
+         */
+
+        letterHint.style.opacity = "0";
+
+
+        /*
+         * Esperamos a que el sobre
+         * termine de desaparecer.
+         */
+
+        setTimeout(() => {
+
+
+            /*
+             * Quitamos la animación
+             * de apertura.
+             */
+
+            letterContainer.classList.remove(
+                "opening"
+            );
+
+
+            /*
+             * Mostramos la carta grande.
+             */
+
+            letterContainer.classList.add(
+                "open"
+            );
+
+
+        }, 650);
+
+    }
+);
+
+
+
+/* =========================================================
+   CERRAR CARTA
+   ========================================================= */
+
+closeLetter.addEventListener(
+    "click",
+    () => {
+
+
+        /*
+         * Primero hacemos desaparecer
+         * la carta grande.
+         */
+
+        letterContainer.classList.remove(
+            "open"
+        );
+
+
+        /*
+         * Después de la animación,
+         * volvemos a mostrar el sobre.
+         */
+
+        setTimeout(() => {
+
+
+            letterHint.style.opacity = "0.75";
+
+
+        }, 600);
+
+    }
+);
+
+
+
+/* =========================================================
+   PANTALLA 3
    ========================================================= */
 
 document
     .getElementById("btn-yes")
-    .addEventListener("click", () => {
+    .addEventListener(
+        "click",
+        () => {
 
-        showScreen("success-screen");
+            showScreen(
+                "success-screen"
+            );
 
-    });
+        }
+    );
+
 
 
 /* =========================================================
@@ -63,11 +240,17 @@ document
 
 document
     .getElementById("btn-back-2")
-    .addEventListener("click", () => {
+    .addEventListener(
+        "click",
+        () => {
 
-        showScreen("screen-1");
+            showScreen(
+                "screen-1"
+            );
 
-    });
+        }
+    );
+
 
 
 /*
@@ -76,11 +259,17 @@ document
 
 document
     .getElementById("btn-back-3")
-    .addEventListener("click", () => {
+    .addEventListener(
+        "click",
+        () => {
 
-        showScreen("screen-2");
+            showScreen(
+                "screen-2"
+            );
 
-    });
+        }
+    );
+
 
 
 /* =========================================================
@@ -88,7 +277,9 @@ document
    ========================================================= */
 
 const btnNo =
-    document.getElementById("btn-no");
+    document.getElementById(
+        "btn-no"
+    );
 
 
 const noMessages = [
@@ -127,23 +318,21 @@ const noMessages = [
 let noClickCount = 0;
 
 
-btnNo.addEventListener("click", () => {
-
-    noClickCount++;
-
-
-    /*
-     * Cambiar el mensaje del botón.
-     *
-     * Cuando llegamos al final de la lista,
-     * vuelve a comenzar.
-     */
-
-    const messageIndex =
-        noClickCount % noMessages.length;
+btnNo.addEventListener(
+    "click",
+    () => {
 
 
-    btnNo.textContent =
-        noMessages[messageIndex];
+        noClickCount++;
 
-});
+
+        const messageIndex =
+            noClickCount %
+            noMessages.length;
+
+
+        btnNo.textContent =
+            noMessages[messageIndex];
+
+    }
+);
