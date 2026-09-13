@@ -4,74 +4,85 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("background-music");
 
     if (!backgroundMusic) {
-        console.error("No se encontró el elemento de música.");
+        console.error("No se encontró la música.");
         return;
     }
 
     /*
-     * Volumen de la música.
+     * Volumen
      */
     backgroundMusic.volume = 0.7;
 
 
     /*
-     * Función para iniciar la música.
-     *
-     * Esta función será llamada cuando ella
-     * presione "Continuar".
+     * Intentar reproducir inmediatamente
+     * cuando se carga la página.
      */
-    window.startBackgroundMusic = () => {
-
-        if (!backgroundMusic.paused) {
-            return;
-        }
+    const startMusic = () => {
 
         backgroundMusic
             .play()
             .then(() => {
 
                 console.log(
-                    "Música iniciada correctamente ❤️"
+                    "🎵 Música iniciada automáticamente."
                 );
 
             })
             .catch((error) => {
 
                 console.log(
-                    "El navegador no permitió reproducir la música:",
+                    "El navegador bloqueó el autoplay:",
                     error
                 );
 
             });
+
     };
 
 
     /*
-     * Intentamos reproducir automáticamente.
+     * INTENTO PRINCIPAL
      *
-     * En computadores normalmente funcionará.
-     * En celulares puede ser bloqueado.
+     * Se ejecuta inmediatamente al cargar
+     * la primera pantalla.
      */
-    backgroundMusic
-        .play()
-        .then(() => {
+    startMusic();
 
-            console.log(
-                "La música comenzó automáticamente ❤️"
-            );
 
-        })
-        .catch(() => {
+    /*
+     * Segundo intento por si el navegador
+     * tarda en cargar completamente el audio.
+     */
+    window.addEventListener("load", () => {
 
-            console.log(
-                "Autoplay bloqueado. Se iniciará al tocar Continuar."
-            );
+        if (backgroundMusic.paused) {
+            startMusic();
+        }
 
-        });
+    });
+
+
+    /*
+     * Si el navegador permite reproducir después
+     * de alguna interacción, aprovechamos cualquier
+     * toque en la página.
+     */
+    document.addEventListener(
+        "click",
+        () => {
+
+            if (backgroundMusic.paused) {
+                startMusic();
+            }
+
+        },
+        { once: false }
+    );
 
 
     console.log(
-        "Declaración cargada correctamente ❤️"
+        "❤️ Declaración cargada correctamente."
     );
 
 });
