@@ -1,113 +1,77 @@
-/* =========================================================
-   APLICACIÓN
-   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+    const backgroundMusic =
+        document.getElementById("background-music");
 
-        const backgroundMusic =
-            document.getElementById("background-music");
+    if (!backgroundMusic) {
+        console.error("No se encontró el elemento de música.");
+        return;
+    }
 
-
-        /* -------------------------------------------------
-           CONFIGURACIÓN DE LA MÚSICA
-           ------------------------------------------------- */
-
-        backgroundMusic.volume = 0.7;
+    /*
+     * Volumen de la música.
+     */
+    backgroundMusic.volume = 0.7;
 
 
-        /* -------------------------------------------------
-           INTENTAR REPRODUCIR AUTOMÁTICAMENTE
-           ------------------------------------------------- */
+    /*
+     * Función para iniciar la música.
+     *
+     * Esta función será llamada cuando ella
+     * presione "Continuar".
+     */
+    window.startBackgroundMusic = () => {
 
-        const playMusic =
-            backgroundMusic.play();
-
-
-        if (playMusic !== undefined) {
-
-            playMusic
-                .then(() => {
-
-                    console.log(
-                        "La música comenzó automáticamente ❤️"
-                    );
-
-                })
-                .catch(() => {
-
-                    console.log(
-                        "El navegador bloqueó el autoplay."
-                    );
-
-                });
-
+        if (!backgroundMusic.paused) {
+            return;
         }
 
+        backgroundMusic
+            .play()
+            .then(() => {
 
-        /* -------------------------------------------------
-           RESPALDO PARA CELULARES
-           -------------------------------------------------
-           
-           Si Chrome/Safari bloqueó el autoplay,
-           el primer toque de ella iniciará la canción.
-           ------------------------------------------------- */
+                console.log(
+                    "Música iniciada correctamente ❤️"
+                );
 
-        const startMusicOnInteraction = () => {
+            })
+            .catch((error) => {
 
-            backgroundMusic
-                .play()
-                .then(() => {
+                console.log(
+                    "El navegador no permitió reproducir la música:",
+                    error
+                );
 
-                    console.log(
-                        "Música iniciada después de la interacción ❤️"
-                    );
-
-                })
-                .catch(() => {
-
-                    console.log(
-                        "No fue posible reproducir la música."
-                    );
-
-                });
+            });
+    };
 
 
-            document.removeEventListener(
-                "touchstart",
-                startMusicOnInteraction
+    /*
+     * Intentamos reproducir automáticamente.
+     *
+     * En computadores normalmente funcionará.
+     * En celulares puede ser bloqueado.
+     */
+    backgroundMusic
+        .play()
+        .then(() => {
+
+            console.log(
+                "La música comenzó automáticamente ❤️"
             );
 
-            document.removeEventListener(
-                "click",
-                startMusicOnInteraction
+        })
+        .catch(() => {
+
+            console.log(
+                "Autoplay bloqueado. Se iniciará al tocar Continuar."
             );
 
-        };
+        });
 
 
-        document.addEventListener(
-            "touchstart",
-            startMusicOnInteraction,
-            {
-                once: true
-            }
-        );
+    console.log(
+        "Declaración cargada correctamente ❤️"
+    );
 
-
-        document.addEventListener(
-            "click",
-            startMusicOnInteraction,
-            {
-                once: true
-            }
-        );
-
-
-        console.log(
-            "Declaración cargada correctamente ❤️"
-        );
-
-    }
-);
+});
