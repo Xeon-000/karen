@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Una pequeña sorpresa hecha con mucho cariño."
+    >
+
+    <title>Para ti ❤️</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes/romantico.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         AUDIO GLOBAL
+         ===================================================== -->
+
+    <audio
+        id="background-music"
+        src="assets/cancion.mp3"
+        loop
+        preload="auto"
+    ></audio>
+
+
+    <!-- =====================================================
+         APLICACIÓN
+         ===================================================== -->
+
+    <main id="app">
+<!-- =================================================
+     PANTALLA 1
+     ================================================= -->
+
+<section
+    id="screen-1"
+    class="screen active"
+    data-screen="1"
+>
+
+    <div class="screen-content">
+
+        <div class="decoration">
+            ❤️
+        </div>
+
+        <h1>
+            Hola, amor
+        </h1>
+
+        <p>
+            He preparado algo pequeñito para ti...
+        </p>
+
+        <button
+            id="btn-screen-1"
+            class="btn btn-primary"
+            type="button"
+        >
+            Continuar
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     PANTALLA 2
+     ================================================= -->
+
+<section
+    id="screen-2"
+    class="screen"
+    data-screen="2"
+>
+
+    <button
+        id="btn-back-2"
+        class="back-button"
+        type="button"
+        aria-label="Volver"
+    >
+        ←
+    </button>
+
+
+    <div class="screen-content">
+
+        <div class="decoration">
+            💌
+        </div>
+
+        <h2>
+            Tengo algo que decirte...
+        </h2>
+
+        <div class="declaration-text">
+
+          
+
+            <p>
+ Amor mío, hemos pasado por adversidades y diferencias, pero poco a poco hemos ido aprendiendo el uno del otro. No sé qué nos depare el futuro, pero hoy quiero hacerte feliz y disfrutar este camino juntos.
+
+Somos un equipo, y quiero que sepas que siempre estaré para ti, no solo para compartir los momentos bonitos, sino también para acompañarte cuando las cosas se pongan difíciles. Quiero ser ese lugar seguro donde puedas acudir cuando estés triste, cuando quieras llorar o simplemente necesites compañía.
+
+Estoy muy feliz de haberte encontrado, porque aunque no siempre pensemos igual, nuestras diferencias también nos han permitido conocernos, aprender y crecer juntos.
+
+Quiero seguir caminando a tu lado, disfrutando cada etapa y aprendiendo el uno del otro, hasta donde Dios nos lo permita. Te quiero muchísimo, y quiero que sepas que estoy aquí para ti, en los días buenos y en los no tan buenos.
+
+            </p>
+
+        </div>
+
+        <button
+            id="btn-screen-2"
+            class="btn btn-primary"
+            type="button"
+        >
+            Continuar
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =================================================
+     PANTALLA 3
+     ================================================= -->
+
+<section
+    id="screen-3"
+    class="screen"
+    data-screen="3"
+>
+
+    <button
+        id="btn-back-3"
+        class="back-button"
+        type="button"
+        aria-label="Volver"
+    >
+        ←
+    </button>
+
+
+    <div class="screen-content">
+
+        <div class="decoration">
+        ❤️
+        </div>
+
+        <h2>
+            Entonces...
+        </h2>
+
+        <p>
+            Después de todo este tiempo...
+        </p>
+
+        <h1>
+            ¿Quieres ser oficialmente mi novia?
+        </h1>
+
+        <div class="answer-buttons">
+
+            <button
+                id="btn-yes"
+                class="btn btn-yes"
+                type="button"
+            >
+                Sí ❤️
+            </button>
+
+            <button
+                id="btn-no"
+                class="btn btn-no"
+                type="button"
+            >
+                No 😢
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- =================================================
+             MENSAJE FINAL
+             ================================================= -->
+
+        <section
+            id="success-screen"
+            class="screen success-screen"
+            data-screen="success"
+        >
+
+            <div class="screen-content">
+
+                <div class="celebration">
+                    ❤️
+                </div>
+
+                <h1>
+                    KAREN DÍAZ!!
+                </h1>
+
+                <p>
+                    Entonces ya es oficial...
+                </p>
+
+                <h2>
+                    Eres mi novia. ❤️
+                </h2>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/navigation.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

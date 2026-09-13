@@ -1,0 +1,120 @@
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HTML / BODY
+   ========================================================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   APLICACIÓN
+   ========================================================= */
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   PANTALLAS
+   ========================================================= */
+
+.screen {
+    display: none;
+
+    width: 100%;
+    min-height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+}
+
+.screen.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+
+.screen-content {
+    width: 100%;
+    max-width: 600px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+button {
+    font-family: inherit;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+
+    padding: 14px 28px;
+
+    border-radius: 999px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .screen {
+        padding: 25px 18px;
+    }
+
+    .screen-content {
+        max-width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}

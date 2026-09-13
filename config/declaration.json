@@ -1,0 +1,21 @@
+{
+    "title": "Para ti ❤️",
+
+    "screen1": {
+        "title": "Hola, amor",
+        "message": "He preparado algo pequeñito para ti..."
+    },
+
+    "screen2": {
+        "title": "Tengo algo que decirte..."
+    },
+
+    "screen3": {
+        "question": "¿Quieres ser oficialmente mi novia?"
+    },
+
+    "success": {
+        "title": "KAREN DÍAZ!!",
+        "message": "Entonces ya es oficial..."
+    }
+}

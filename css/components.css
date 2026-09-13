@@ -1,0 +1,254 @@
+/* =========================================================
+   ELEMENTOS DECORATIVOS
+   ========================================================= */
+
+.decoration {
+    font-size: 55px;
+    margin-bottom: 20px;
+    animation: floating 2.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   TEXTOS
+   ========================================================= */
+
+.screen h1 {
+    margin-bottom: 18px;
+}
+
+.screen h2 {
+    margin-bottom: 18px;
+}
+
+.screen p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.declaration-text {
+    margin: 25px auto;
+    max-width: 500px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BOTONES PRINCIPALES
+   ========================================================= */
+
+.btn-primary {
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   ÁREA DE RESPUESTAS
+   ========================================================= */
+
+.answer-buttons {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+
+    /*
+        Espacio suficiente para que el NO
+        pueda escapar sin montarse encima
+        del texto.
+    */
+    height: 150px;
+
+    margin: 35px auto 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   BOTONES SÍ / NO
+   ========================================================= */
+
+.btn-yes,
+.btn-no {
+
+    min-width: 130px;
+
+    position: relative;
+
+    z-index: 10;
+
+    transition:
+        transform 0.25s ease,
+        left 0.18s ease,
+        top 0.18s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   BOTÓN NO
+   ========================================================= */
+
+.btn-no {
+
+    touch-action: none;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+
+    /*
+        Evita que el texto pueda romper
+        el tamaño del botón.
+    */
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   PANTALLA FINAL
+   ========================================================= */
+
+.success-screen {
+    text-align: center;
+}
+
+.celebration {
+    font-size: 80px;
+    animation: celebration 1s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+@keyframes celebration {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   BOTÓN VOLVER
+   ========================================================= */
+
+.back-button {
+
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    color: #ad1457;
+
+    font-size: 25px;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px rgba(120, 30, 60, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.back-button:hover {
+    transform: scale(1.08);
+}
+
+
+.back-button:active {
+    transform: scale(0.92);
+}
+
+
+/* =========================================================
+   CELULARES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .back-button {
+
+        top: 15px;
+        left: 15px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 23px;
+    }
+
+
+    .answer-buttons {
+
+        /*
+            Área de escape más alta
+            para teléfonos.
+        */
+        height: 170px;
+
+        margin-top: 30px;
+
+        gap: 15px;
+
+    }
+
+
+    .btn-yes,
+    .btn-no {
+
+        min-width: 120px;
+
+    }
+
+}
