@@ -1,88 +1,111 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-    const backgroundMusic =
-        document.getElementById("background-music");
-
-    if (!backgroundMusic) {
-        console.error("No se encontró la música.");
-        return;
-    }
-
-    /*
-     * Volumen
-     */
-    backgroundMusic.volume = 0.7;
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
 
-    /*
-     * Intentar reproducir inmediatamente
-     * cuando se carga la página.
-     */
-    const startMusic = () => {
-
-        backgroundMusic
-            .play()
-            .then(() => {
-
-                console.log(
-                    "🎵 Música iniciada automáticamente."
-                );
-
-            })
-            .catch((error) => {
-
-                console.log(
-                    "El navegador bloqueó el autoplay:",
-                    error
-                );
-
-            });
-
-    };
+        const backgroundMusic =
+            document.getElementById(
+                "background-music"
+            );
 
 
-    /*
-     * INTENTO PRINCIPAL
-     *
-     * Se ejecuta inmediatamente al cargar
-     * la primera pantalla.
-     */
-    startMusic();
+        if (!backgroundMusic) {
 
+            console.error(
+                "No se encontró la música."
+            );
 
-    /*
-     * Segundo intento por si el navegador
-     * tarda en cargar completamente el audio.
-     */
-    window.addEventListener("load", () => {
+            return;
 
-        if (backgroundMusic.paused) {
-            startMusic();
         }
 
-    });
 
 
-    /*
-     * Si el navegador permite reproducir después
-     * de alguna interacción, aprovechamos cualquier
-     * toque en la página.
-     */
-    document.addEventListener(
-        "click",
-        () => {
+        /* =================================================
+           CONFIGURACIÓN
+           ================================================= */
 
-            if (backgroundMusic.paused) {
-                startMusic();
+        backgroundMusic.volume = 0.7;
+
+
+
+        /* =================================================
+           FUNCIÓN PARA INICIAR MÚSICA
+           ================================================= */
+
+        window.startBackgroundMusic =
+            () => {
+
+
+                /*
+                 * Si ya está reproduciéndose,
+                 * no hacemos nada.
+                 */
+
+                if (
+                    !backgroundMusic.paused
+                ) {
+
+                    return;
+
+                }
+
+
+                backgroundMusic
+                    .play()
+                    .then(() => {
+
+                        console.log(
+                            "🎵 Música iniciada."
+                        );
+
+                    })
+                    .catch((error) => {
+
+                        console.log(
+                            "El navegador bloqueó la música:",
+                            error
+                        );
+
+                    });
+
+            };
+
+
+
+        /* =================================================
+           INTENTO DE AUTOPLAY
+           ================================================= */
+
+        window.startBackgroundMusic();
+
+
+
+        /* =================================================
+           SEGUNDO INTENTO
+           ================================================= */
+
+        window.addEventListener(
+            "load",
+            () => {
+
+
+                if (
+                    backgroundMusic.paused
+                ) {
+
+                    window.startBackgroundMusic();
+
+                }
+
             }
-
-        },
-        { once: false }
-    );
+        );
 
 
-    console.log(
-        "❤️ Declaración cargada correctamente."
-    );
 
-});
+        console.log(
+            "❤️ Declaración cargada correctamente."
+        );
+
+    }
+);
