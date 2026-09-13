@@ -1,8 +1,9 @@
 /* =========================================================
-   TEMA ROMÁNTICO
+   FONDO GENERAL
    ========================================================= */
 
 body {
+
     background:
         linear-gradient(
             135deg,
@@ -11,20 +12,28 @@ body {
         );
 
     color: #4a2430;
+
 }
+
 
 
 /* =========================================================
-   TITULOS
+   TÍTULOS
    ========================================================= */
 
 .screen h1 {
+
     color: #c2185b;
+
 }
 
+
 .screen h2 {
+
     color: #ad1457;
+
 }
+
 
 
 /* =========================================================
@@ -33,41 +42,209 @@ body {
 
 .btn-primary,
 .btn-yes {
+
     background: #e91e63;
+
     color: white;
 
     box-shadow:
-        0 8px 20px rgba(233, 30, 99, 0.25);
+        0 8px 20px
+        rgba(
+            233,
+            30,
+            99,
+            0.25
+        );
+
 }
+
 
 .btn-primary:hover,
 .btn-yes:hover {
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0 12px 25px rgba(233, 30, 99, 0.35);
+        0 12px 25px
+        rgba(
+            233,
+            30,
+            99,
+            0.35
+        );
+
 }
 
 
 .btn-no {
+
     background: white;
+
     color: #ad1457;
 
-    border: 2px solid #f48fb1;
+    border:
+        2px solid #f48fb1;
+
 }
 
 
+
 /* =========================================================
-   DECLARACIÓN
+   SOBRE
    ========================================================= */
 
-.declaration-text {
-    background: rgba(255, 255, 255, 0.65);
+.envelope-back {
 
-    padding: 25px;
-
-    border-radius: 20px;
+    background:
+        linear-gradient(
+            145deg,
+            #f48fb1,
+            #ec6f9d
+        );
 
     box-shadow:
-        0 10px 30px rgba(120, 30, 60, 0.08);
+        0 15px 35px
+        rgba(
+            120,
+            30,
+            60,
+            0.18
+        );
+
+}
+
+
+.envelope-front {
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7a5bd,
+            #ee789f
+        );
+
+}
+
+
+.envelope-flap {
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8aec4,
+            #ed719a
+        );
+
+}
+
+
+
+/* =========================================================
+   PAPEL DEL SOBRE
+   ========================================================= */
+
+.envelope .letter-paper {
+
+    background:
+        #fffdf8;
+
+    color:
+        #59313d;
+
+}
+
+
+
+/* =========================================================
+   SELLO
+   ========================================================= */
+
+.letter-seal {
+
+    background:
+        #e91e63;
+
+    color:
+        white;
+
+}
+
+
+
+/* =========================================================
+   CARTA ABIERTA
+   ========================================================= */
+
+.open-letter {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf8,
+            #fff8ed
+        );
+
+    color:
+        #59313d;
+
+    border:
+        1px solid
+        rgba(
+            180,
+            90,
+            120,
+            0.15
+        );
+
+}
+
+
+.open-letter h3 {
+
+    color:
+        #c2185b;
+
+}
+
+
+.long-declaration p {
+
+    color:
+        #59313d;
+
+}
+
+
+
+/* =========================================================
+   BOTÓN CERRAR
+   ========================================================= */
+
+.close-letter {
+
+    background:
+        rgba(
+            233,
+            30,
+            99,
+            0.08
+        );
+
+    color:
+        #ad1457;
+
+}
+
+
+
+/* =========================================================
+   INDICACIÓN
+   ========================================================= */
+
+.letter-hint {
+
+    color:
+        #ad1457;
+
 }
