@@ -17,17 +17,35 @@
 
     <title>Para ti ❤️</title>
 
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/themes/romantico.css">
+
+    <!-- CSS GENERAL -->
+
+    <link
+        rel="stylesheet"
+        href="css/base.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/components.css"
+    >
+
+
+    <!-- TEMA -->
+
+    <link
+        rel="stylesheet"
+        href="css/themes/romantico.css"
+    >
 
 </head>
 
 
 <body>
 
+
     <!-- =====================================================
-         AUDIO GLOBAL
+         MÚSICA
          ===================================================== -->
 
     <audio
@@ -38,173 +56,330 @@
     ></audio>
 
 
-    <!-- =====================================================
-         APLICACIÓN
-         ===================================================== -->
 
     <main id="app">
-<!-- =================================================
-     PANTALLA 1
-     ================================================= -->
-
-<section
-    id="screen-1"
-    class="screen active"
-    data-screen="1"
->
-
-    <div class="screen-content">
-
-        <div class="decoration">
-            ❤️
-        </div>
-
-        <h1>
-            Hola, amor
-        </h1>
-
-        <p>
-            He preparado algo pequeñito para ti...
-        </p>
-
-        <button
-            id="btn-screen-1"
-            class="btn btn-primary"
-            type="button"
-        >
-            Continuar
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =================================================
-     PANTALLA 2
-     ================================================= -->
-
-<section
-    id="screen-2"
-    class="screen"
-    data-screen="2"
->
-
-    <button
-        id="btn-back-2"
-        class="back-button"
-        type="button"
-        aria-label="Volver"
-    >
-        ←
-    </button>
-
-
-    <div class="screen-content">
-
-        <div class="decoration">
-            💌
-        </div>
-
-        <h2>
-            Tengo algo que decirte...
-        </h2>
-
-        <div class="declaration-text">
-
-          
-
-            <p>
- Amor mío, hemos pasado por adversidades y diferencias, pero poco a poco hemos ido aprendiendo el uno del otro. No sé qué nos depare el futuro, pero hoy quiero hacerte feliz y disfrutar este camino juntos.
-
-Somos un equipo, y quiero que sepas que siempre estaré para ti, no solo para compartir los momentos bonitos, sino también para acompañarte cuando las cosas se pongan difíciles. Quiero ser ese lugar seguro donde puedas acudir cuando estés triste, cuando quieras llorar o simplemente necesites compañía.
-
-Estoy muy feliz de haberte encontrado, porque aunque no siempre pensemos igual, nuestras diferencias también nos han permitido conocernos, aprender y crecer juntos.
-
-Quiero seguir caminando a tu lado, disfrutando cada etapa y aprendiendo el uno del otro, hasta donde Dios nos lo permita. Te quiero muchísimo, y quiero que sepas que estoy aquí para ti, en los días buenos y en los no tan buenos.
-
-            </p>
-
-        </div>
-
-        <button
-            id="btn-screen-2"
-            class="btn btn-primary"
-            type="button"
-        >
-            Continuar
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =================================================
-     PANTALLA 3
-     ================================================= -->
-
-<section
-    id="screen-3"
-    class="screen"
-    data-screen="3"
->
-
-    <button
-        id="btn-back-3"
-        class="back-button"
-        type="button"
-        aria-label="Volver"
-    >
-        ←
-    </button>
-
-
-    <div class="screen-content">
-
-        <div class="decoration">
-        ❤️
-        </div>
-
-        <h2>
-            Entonces...
-        </h2>
-
-        <p>
-            Después de todo este tiempo...
-        </p>
-
-        <h1>
-            ¿Quieres ser oficialmente mi novia?
-        </h1>
-
-        <div class="answer-buttons">
-
-            <button
-                id="btn-yes"
-                class="btn btn-yes"
-                type="button"
-            >
-                Sí ❤️
-            </button>
-
-            <button
-                id="btn-no"
-                class="btn btn-no"
-                type="button"
-            >
-                No 😢
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
 
 
         <!-- =================================================
-             MENSAJE FINAL
+             PANTALLA 1
+             ================================================= -->
+
+        <section
+            id="screen-1"
+            class="screen active"
+            data-screen="1"
+        >
+
+            <div class="screen-content">
+
+                <div class="decoration">
+                    ❤️
+                </div>
+
+                <h1>
+                    Hola, amor
+                </h1>
+
+                <p>
+                    He preparado algo pequeñito para ti...
+                </p>
+
+                <button
+                    id="btn-screen-1"
+                    class="btn btn-primary"
+                    type="button"
+                >
+                    Continuar
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PANTALLA 2
+             ================================================= -->
+
+        <section
+            id="screen-2"
+            class="screen letter-screen"
+            data-screen="2"
+        >
+
+
+            <!-- BOTÓN VOLVER -->
+
+            <button
+                id="btn-back-2"
+                class="back-button"
+                type="button"
+                aria-label="Volver"
+            >
+                ←
+            </button>
+
+
+
+            <div class="screen-content">
+
+
+                <h2 class="letter-intro">
+                    Tengo algo para ti... 💌
+                </h2>
+
+
+
+                <!-- =================================================
+                     SOBRE
+                     ================================================= -->
+
+                <div
+                    id="letter-container"
+                    class="letter-container"
+                >
+
+
+                    <!-- SOBRE CERRADO -->
+
+                    <div
+                        id="envelope"
+                        class="envelope"
+                    >
+
+                        <!-- Parte trasera -->
+
+                        <div class="envelope-back"></div>
+
+
+                        <!-- Papel que sale -->
+
+                        <div class="letter-paper">
+
+                            <div class="letter-paper-content">
+
+                                <h3>
+                                    Para ti ❤️
+                                </h3>
+
+                                <p>
+                                    Amor mío...
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Frente -->
+
+                        <div class="envelope-front"></div>
+
+
+                        <!-- Solapa -->
+
+                        <div class="envelope-flap"></div>
+
+
+                        <!-- Sello -->
+
+                        <div class="letter-seal">
+                            ❤️
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         CARTA ABIERTA
+                         ================================================= -->
+
+                    <div
+                        id="open-letter"
+                        class="open-letter"
+                    >
+
+
+                        <!-- BOTÓN CERRAR -->
+
+                        <button
+                            id="btn-close-letter"
+                            class="close-letter"
+                            type="button"
+                            aria-label="Cerrar carta"
+                        >
+                            ×
+                        </button>
+
+
+
+                        <!-- CONTENIDO -->
+
+                        <div class="open-letter-content">
+
+
+                            <div class="letter-top-decoration">
+                                ❤️
+                            </div>
+
+
+                            <h3>
+                                Para ti
+                            </h3>
+
+
+                            <div class="long-declaration">
+
+                                <p>
+                                    Amor mío, hemos pasado por adversidades y diferencias, pero poco a poco hemos ido aprendiendo el uno del otro.
+                                </p>
+
+                                <p>
+                                    No sé qué nos depare el futuro, pero hoy quiero hacerte feliz y disfrutar este camino juntos.
+                                </p>
+
+                                <p>
+                                    Somos un equipo, y quiero que sepas que siempre estaré para ti, no solo para compartir los momentos bonitos, sino también para acompañarte cuando las cosas se pongan difíciles.
+                                </p>
+
+                                <p>
+                                    Quiero ser ese lugar seguro donde puedas acudir cuando estés triste, cuando quieras llorar o simplemente necesites compañía.
+                                </p>
+
+                                <p>
+                                    Estoy muy feliz de haberte encontrado, porque aunque no siempre pensemos igual, nuestras diferencias también nos han permitido conocernos, aprender y crecer juntos.
+                                </p>
+
+                                <p>
+                                    Quiero seguir caminando a tu lado, disfrutando cada etapa y aprendiendo el uno del otro, hasta donde Dios nos lo permita.
+                                </p>
+
+                                <p>
+                                    Te quiero muchísimo, y quiero que sepas que estoy aquí para ti, en los días buenos y en los no tan buenos.
+                                </p>
+
+                            </div>
+
+
+                            <div class="letter-bottom-decoration">
+                                ❤️
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- INDICACIÓN -->
+
+                <p
+                    id="letter-hint"
+                    class="letter-hint"
+                >
+                    Toca la carta para abrirla ❤️
+                </p>
+
+
+
+                <!-- CONTINUAR -->
+
+                <button
+                    id="btn-screen-2"
+                    class="btn btn-primary letter-continue"
+                    type="button"
+                >
+                    Continuar ❤️
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PANTALLA 3
+             ================================================= -->
+
+        <section
+            id="screen-3"
+            class="screen"
+            data-screen="3"
+        >
+
+
+            <button
+                id="btn-back-3"
+                class="back-button"
+                type="button"
+                aria-label="Volver"
+            >
+                ←
+            </button>
+
+
+            <div class="screen-content">
+
+
+                <div class="decoration">
+                    🥹❤️
+                </div>
+
+
+                <h2>
+                    Entonces...
+                </h2>
+
+
+                <p>
+                    Después de todo este tiempo...
+                </p>
+
+
+                <h1>
+                    ¿Quieres ser oficialmente mi novia?
+                </h1>
+
+
+                <div class="answer-buttons">
+
+
+                    <button
+                        id="btn-yes"
+                        class="btn btn-yes"
+                        type="button"
+                    >
+                        Sí ❤️
+                    </button>
+
+
+                    <button
+                        id="btn-no"
+                        class="btn btn-no"
+                        type="button"
+                    >
+                        No 😢
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PANTALLA FINAL
              ================================================= -->
 
         <section
@@ -220,7 +395,7 @@ Quiero seguir caminando a tu lado, disfrutando cada etapa y aprendiendo el uno d
                 </div>
 
                 <h1>
-                    KAREN DÍAZ!!
+                    ¡SÍÍÍ! 🥹❤️
                 </h1>
 
                 <p>
@@ -239,13 +414,17 @@ Quiero seguir caminando a tu lado, disfrutando cada etapa y aprendiendo el uno d
     </main>
 
 
+
     <!-- =====================================================
          JAVASCRIPT
          ===================================================== -->
 
     <script src="js/navigation.js"></script>
+
     <script src="js/interactions.js"></script>
+
     <script src="js/app.js"></script>
+
 
 </body>
 
